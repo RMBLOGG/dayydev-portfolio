@@ -1,1 +1,328 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Dayy Dev — Anime Web Portfolio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Noto+Sans+JP:wght@300;400;700&family=Space+Mono&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+  <div class="bg-layer">
+    <div class="grid-overlay"></div>
+    <div class="particles" id="particles"></div>
+    <div class="sakura-container" id="sakura"></div>
+  </div>
 
+  <!-- Loader -->
+  <div class="loader" id="loader">
+    <div class="loader-inner">
+      <span class="loader-kanji">デイ</span>
+      <div class="loader-bar"><div class="loader-fill"></div></div>
+      <span class="loader-text">LOADING...</span>
+    </div>
+  </div>
+
+  <!-- Nav -->
+  <nav class="navbar">
+    <div class="nav-logo">
+      <span class="logo-kanji">デイ</span>
+      <span class="logo-text">DAYY<span class="accent">DEV</span></span>
+    </div>
+    <div class="nav-links">
+      <a href="#about">About</a>
+      <a href="#projects">Projects</a>
+      <a href="#app">App</a>
+      <a href="#contact">Contact</a>
+    </div>
+    <div class="nav-wa">
+      <a href="https://wa.me/6282320781747" target="_blank"><i class="fab fa-whatsapp"></i> WA</a>
+    </div>
+  </nav>
+
+  <!-- Hero -->
+  <section class="hero">
+    <div class="hero-badge anim-fade-down">✦ Anime Web Developer ✦</div>
+    <h1 class="hero-title">
+      <span class="line1 anim-fade-down" style="animation-delay:.15s">アニメの世界へ</span>
+      <span class="line2 anim-fade-up" style="animation-delay:.3s">BUILDING THE<br><em>ANIME WEB</em></span>
+    </h1>
+    <p class="hero-sub anim-fade-up" style="animation-delay:.5s">
+      Spesialis pembuatan website &amp; aplikasi bertema anime.<br>
+      Dari streaming platform hingga database — semua aku bangun.
+    </p>
+    <div class="hero-actions anim-fade-up" style="animation-delay:.7s">
+      <a href="#projects" class="btn-primary"><i class="fas fa-play"></i> Lihat Portfolio</a>
+      <a href="https://wa.me/6282320781747" target="_blank" class="btn-ghost"><i class="fab fa-whatsapp"></i> Hubungi via WA</a>
+    </div>
+    <div class="hero-tags anim-fade-up" style="animation-delay:.9s">
+      <span class="htag">🎌 Anime</span>
+      <span class="htag">⚡ Flask</span>
+      <span class="htag">🌐 Website</span>
+      <span class="htag">📱 Android</span>
+      <span class="htag">▲ Vercel</span>
+    </div>
+    <div class="hero-scroll"><span>scroll</span><div class="scroll-line"></div></div>
+  </section>
+
+  <!-- Stats -->
+  <section class="stats-bar">
+    <div class="stat"><span class="stat-num" data-target="5">0</span><span class="stat-label">Projects</span></div>
+    <div class="stat-divider">✦</div>
+    <div class="stat"><span class="stat-num" data-target="1">0</span><span class="stat-label">App Android</span></div>
+    <div class="stat-divider">✦</div>
+    <div class="stat"><span class="stat-num" data-target="1000">0</span><span class="stat-label">+ Koleksi Anime</span></div>
+    <div class="stat-divider">✦</div>
+    <div class="stat"><span class="stat-num" data-target="24">0</span><span class="stat-label">Jam Siap</span></div>
+  </section>
+
+  <!-- About -->
+  <section class="about-section" id="about">
+    <div class="about-inner">
+      <div class="about-left reveal-left">
+        <span class="section-tag">について</span>
+        <h2>TENTANG <em>DAYY DEV</em></h2>
+        <p>Halo! Aku seorang developer yang passionate di dunia anime dan web development. Spesialis membangun platform streaming, database anime, dan aplikasi mobile terbaik untuk para otaku.</p>
+        <p>Dari <strong>streaming platform</strong>, <strong>anime database</strong>, hingga <strong>aplikasi Android</strong> — aku siap mewujudkan ide website anime impianmu!</p>
+        <div class="about-badges">
+          <span class="abadge"><i class="fas fa-bolt"></i> Fast Delivery</span>
+          <span class="abadge"><i class="fas fa-palette"></i> Anime Design</span>
+          <span class="abadge"><i class="fas fa-mobile-alt"></i> Mobile Ready</span>
+          <span class="abadge"><i class="fas fa-headset"></i> Support 24/7</span>
+        </div>
+      </div>
+      <div class="about-right reveal-right">
+        <div class="about-card">
+          <div class="about-card-header">
+            <i class="fas fa-user-ninja" style="color:var(--pink);font-size:2rem"></i>
+            <div>
+              <h4>Dayy Dev</h4>
+              <small>Anime Web Specialist</small>
+            </div>
+          </div>
+          <div class="about-skills">
+            <div class="skill-row">
+              <span>Web Development</span>
+              <div class="skill-bar"><div class="skill-fill" data-width="95"></div></div>
+              <span class="skill-pct">95%</span>
+            </div>
+            <div class="skill-row">
+              <span>UI/UX Anime Design</span>
+              <div class="skill-bar"><div class="skill-fill" data-width="90"></div></div>
+              <span class="skill-pct">90%</span>
+            </div>
+            <div class="skill-row">
+              <span>Flask / Python</span>
+              <div class="skill-bar"><div class="skill-fill" data-width="88"></div></div>
+              <span class="skill-pct">88%</span>
+            </div>
+            <div class="skill-row">
+              <span>Android App</span>
+              <div class="skill-bar"><div class="skill-fill" data-width="80"></div></div>
+              <span class="skill-pct">80%</span>
+            </div>
+          </div>
+          <div class="about-status">
+            <span class="status-dot"></span>
+            <span>Open for orders — Balas dalam 1 jam</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Projects -->
+  <section class="projects" id="projects">
+    <div class="section-header reveal-up">
+      <span class="section-tag">プロジェクト</span>
+      <h2>WEBSITE <em>PORTFOLIO</em></h2>
+      <p>Kumpulan website anime yang telah aku bangun dengan sepenuh hati</p>
+    </div>
+    <div class="projects-grid">
+      {% for p in projects %}
+      <div class="project-card reveal-up" style="--accent: {{ p.color }}">
+        <div class="card-screenshot">
+          <img src="{{ p.screenshot }}" alt="{{ p.name }} screenshot" loading="lazy"
+            onerror="this.src='https://placehold.co/800x450/0d0d1a/{{ p.color[1:] }}?text={{ p.name }}'">
+          <div class="card-overlay">
+            <a href="{{ p.url }}" target="_blank" class="visit-btn"><i class="fas fa-external-link-alt"></i> Kunjungi</a>
+          </div>
+          <span class="card-tag">{{ p.tag }}</span>
+          <div class="card-num">0{{ loop.index }}</div>
+        </div>
+        <div class="card-body">
+          <h3>{{ p.name }}</h3>
+          <p>{{ p.desc }}</p>
+          <div class="card-footer-row">
+            <a href="{{ p.url }}" target="_blank" class="card-link"><i class="fas fa-link"></i> {{ p.url | replace('https://', '') }}</a>
+            <span class="card-arrow">→</span>
+          </div>
+        </div>
+        <div class="card-glow"></div>
+      </div>
+      {% endfor %}
+    </div>
+  </section>
+
+  <!-- App Section -->
+  <section class="app-section" id="app">
+    <div class="section-header reveal-up">
+      <span class="section-tag">アプリ</span>
+      <h2>MOBILE <em>APPLICATION</em></h2>
+      <p>Nikmati anime di mana saja dengan aplikasi Android kami</p>
+    </div>
+    <div class="app-showcase">
+      <div class="app-screenshot-preview reveal-left">
+        <div class="preview-label">PREVIEW APP</div>
+        <img src="{{ app.screenshot }}" alt="AnimeDayy App Screenshot"
+          onerror="this.src='https://placehold.co/500x300/0a0a1e/a78bfa?text=AnimeDayy'">
+        <div class="preview-shimmer"></div>
+      </div>
+      <div class="app-card reveal-right">
+        <div class="app-card-header">
+          <div class="app-icon">
+            <img src="{{ url_for('static', filename='ic_launcher.png') }}" alt="AnimeDayy Icon">
+          </div>
+          <div>
+            <h3>{{ app.name }}</h3>
+            <span class="app-version">v2.0.0</span>
+          </div>
+        </div>
+        <div class="app-card-body">
+          <p>{{ app.desc }}</p>
+          <div class="app-stats-mini">
+            <div class="asm-item">
+              <i class="fas fa-film" style="color:var(--pink)"></i>
+              <span class="asm-num">1000+</span>
+              <span class="asm-label">Koleksi</span>
+            </div>
+            <div class="asm-item">
+              <i class="fas fa-sync" style="color:var(--cyan)"></i>
+              <span class="asm-num">7</span>
+              <span class="asm-label">Update/hari</span>
+            </div>
+            <div class="asm-item">
+              <i class="fas fa-server" style="color:var(--gold)"></i>
+              <span class="asm-num">4+</span>
+              <span class="asm-label">Server</span>
+            </div>
+          </div>
+          <ul class="app-features">
+            <li><i class="fas fa-play-circle" style="color:var(--pink)"></i> Streaming HD</li>
+            <li><i class="fas fa-download" style="color:var(--cyan)"></i> Download eps</li>
+            <li><i class="fas fa-database" style="color:var(--purple)"></i> Database lengkap</li>
+            <li><i class="fas fa-bell" style="color:var(--gold)"></i> Notif episode baru</li>
+            <li><i class="fas fa-moon" style="color:var(--purple)"></i> Dark anime UI</li>
+            <li><i class="fas fa-bolt" style="color:var(--gold)"></i> Update harian</li>
+          </ul>
+        </div>
+        <div class="app-card-footer">
+          <a href="{{ app.url }}" target="_blank" class="btn-download">
+            <i class="fas fa-download"></i> Download AnimeDayy APK
+          </a>
+          <span class="app-badge"><i class="fab fa-android"></i> Android App</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Tech Stack -->
+  <section class="tech-section">
+    <div class="section-header reveal-up">
+      <span class="section-tag">技術</span>
+      <h2>TECH <em>STACK</em></h2>
+      <p>Teknologi yang aku gunakan untuk membangun setiap project</p>
+    </div>
+    <div class="tech-grid">
+      <div class="tech-item reveal-up"><i class="fab fa-python tech-icon"></i><span>Flask</span><small>Python Backend</small></div>
+      <div class="tech-item reveal-up"><i class="fab fa-html5 tech-icon" style="color:#e34f26"></i><span>HTML5</span><small>Markup</small></div>
+      <div class="tech-item reveal-up"><i class="fab fa-css3-alt tech-icon" style="color:#1572b6"></i><span>CSS3</span><small>Styling</small></div>
+      <div class="tech-item reveal-up"><i class="fab fa-js-square tech-icon" style="color:#f7df1e"></i><span>JavaScript</span><small>Interaksi</small></div>
+      <div class="tech-item reveal-up"><i class="fas fa-cloud-upload-alt tech-icon" style="color:white"></i><span>Vercel</span><small>Deployment</small></div>
+      <div class="tech-item reveal-up"><i class="fab fa-android tech-icon" style="color:#3ddc84"></i><span>Android</span><small>Mobile App</small></div>
+    </div>
+  </section>
+
+  <!-- Services -->
+  <section class="services-section">
+    <div class="section-header reveal-up">
+      <span class="section-tag">サービス</span>
+      <h2>LAYANAN <em>KAMI</em></h2>
+      <p>Apa saja yang bisa aku buatkan untukmu?</p>
+    </div>
+    <div class="services-grid">
+      <div class="service-card reveal-up">
+        <div class="service-icon"><i class="fas fa-tv"></i></div>
+        <h4>Streaming Platform</h4>
+        <p>Website streaming anime lengkap dengan player, subtitle, dan database episode terbaru.</p>
+        <div class="service-tag">⭐ Popular</div>
+      </div>
+      <div class="service-card reveal-up">
+        <div class="service-icon"><i class="fas fa-database"></i></div>
+        <h4>Anime Database</h4>
+        <p>Website database anime dengan info lengkap, rating, genre, sinopsis, dan jadwal tayang.</p>
+      </div>
+      <div class="service-card reveal-up">
+        <div class="service-icon"><i class="fas fa-download"></i></div>
+        <h4>Media Downloader</h4>
+        <p>Tools download anime, video, dan konten digital dengan antarmuka yang simpel dan cepat.</p>
+      </div>
+      <div class="service-card reveal-up">
+        <div class="service-icon"><i class="fab fa-android"></i></div>
+        <h4>Android App</h4>
+        <p>Aplikasi Android bertema anime untuk streaming, tracking, maupun komunitas penggemar.</p>
+      </div>
+      <div class="service-card reveal-up">
+        <div class="service-icon"><i class="fas fa-link"></i></div>
+        <h4>URL Shortener</h4>
+        <p>Layanan shortlink custom dengan analytics klik dan branding sesuai keinginanmu.</p>
+      </div>
+      <div class="service-card reveal-up">
+        <div class="service-icon"><i class="fas fa-magic"></i></div>
+        <h4>Custom Request</h4>
+        <p>Punya ide website anime unik lainnya? Konsultasikan langsung denganku tanpa biaya!</p>
+        <div class="service-tag" style="background:rgba(167,139,250,0.1);color:var(--purple);border-color:rgba(167,139,250,0.3)">✨ Custom</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section class="contact" id="contact">
+    <div class="contact-card reveal-up">
+      <div class="contact-kanji">連絡</div>
+      <span class="section-tag" style="display:block;margin-bottom:.75rem">コンタクト</span>
+      <h2>TERTARIK BIKIN<br><em>WEBSITE ANIME?</em></h2>
+      <p>Hubungi langsung via WhatsApp untuk konsultasi gratis dan penawaran terbaik!</p>
+      <div class="contact-perks">
+        <div class="cperk"><i class="fas fa-comments"></i><span>Konsultasi Gratis</span></div>
+        <div class="cperk"><i class="fas fa-tags"></i><span>Harga Nego</span></div>
+        <div class="cperk"><i class="fas fa-shipping-fast"></i><span>Pengerjaan Cepat</span></div>
+        <div class="cperk"><i class="fas fa-tools"></i><span>After-Sales Support</span></div>
+      </div>
+      <a href="https://wa.me/6282320781747" target="_blank" class="btn-wa">
+        <i class="fab fa-whatsapp"></i> 082320781747
+      </a>
+      <div class="contact-note"><span class="status-dot"></span> Balas cepat • Open order • Harga nego</div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="footer-inner">
+      <div class="footer-logo">デイ DAYY<span class="accent">DEV</span></div>
+      <p>Anime Web Specialist — Membangun dunia anime satu website pada satu waktu</p>
+      <div class="footer-links">
+        <a href="#about">About</a>
+        <a href="#projects">Projects</a>
+        <a href="#app">App</a>
+        <a href="https://wa.me/6282320781747" target="_blank">WhatsApp</a>
+      </div>
+      <p class="footer-copy">© 2024 DayyDev. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="{{ url_for('static', filename='js/main.js') }}"></script>
+</body>
+</html>
