@@ -46,6 +46,14 @@ projects = [
         "tag": "DramaBox",
         "color": "#38bdf8"
     },
+    {
+        "name": "Animeku.id",
+        "desc": "Website anime Indonesia dengan koleksi lengkap, update terbaru, dan antarmuka yang nyaman untuk semua pecinta anime.",
+        "url": "https://animeku-id.vercel.app",
+        "screenshot": "https://api.microlink.io/?url=https://animeku-id.vercel.app&screenshot=true&meta=false&embed=screenshot.url",
+        "tag": "Streaming",
+        "color": "#f472b6"
+    },
 ]
 
 app_data = {
@@ -55,9 +63,11 @@ app_data = {
     "screenshot": "https://api.microlink.io/?url=https://animedayy-download.vercel.app&screenshot=true&meta=false&embed=screenshot.url",
 }
 
+support_url = "https://sociabuzz.com/dayynime/tribe"
+
 @app.route('/')
 def index():
-    return render_template('index.html', projects=projects, app=app_data)
+    return render_template('index.html', projects=projects, app=app_data, support_url=support_url)
 
 # Serve static files explicitly (needed for Vercel)
 @app.route('/static/<path:filename>')
