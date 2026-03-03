@@ -37,8 +37,9 @@
       <a href="#app">App</a>
       <a href="#contact">Contact</a>
     </div>
-    <div class="nav-wa">
-      <a href="https://wa.me/6282320781747" target="_blank"><i class="fab fa-whatsapp"></i> WA</a>
+    <div class="nav-actions" style="display:flex;align-items:center;gap:.6rem">
+      <a href="{{ support_url }}" target="_blank" class="btn-support-nav"><i class="fas fa-heart"></i> Support Me</a>
+      <a href="https://wa.me/6282320781747" target="_blank" class="nav-wa"><i class="fab fa-whatsapp"></i> WA</a>
     </div>
   </nav>
 
@@ -69,7 +70,7 @@
 
   <!-- Stats -->
   <section class="stats-bar">
-    <div class="stat"><span class="stat-num" data-target="5">0</span><span class="stat-label">Projects</span></div>
+    <div class="stat"><span class="stat-num" data-target="6">0</span><span class="stat-label">Projects</span></div>
     <div class="stat-divider">✦</div>
     <div class="stat"><span class="stat-num" data-target="1">0</span><span class="stat-label">App Android</span></div>
     <div class="stat-divider">✦</div>
@@ -288,6 +289,25 @@
     </div>
   </section>
 
+  <!-- Support Me Section -->
+  <section class="support-section reveal-up" style="padding:4rem 1.5rem;text-align:center">
+    <div class="support-card" style="max-width:600px;margin:0 auto;background:linear-gradient(135deg,rgba(244,114,182,0.08),rgba(167,139,250,0.08));border:1px solid rgba(244,114,182,0.25);border-radius:1.5rem;padding:2.5rem 2rem">
+      <div style="font-size:2.5rem;margin-bottom:.75rem">💖</div>
+      <span class="section-tag" style="display:block;margin-bottom:.75rem">サポート</span>
+      <h2 style="font-family:'Orbitron',sans-serif;font-size:1.5rem;margin-bottom:.75rem">SUPPORT <em style="color:var(--pink)">DAYY DEV</em></h2>
+      <p style="color:rgba(255,255,255,0.65);margin-bottom:1.75rem;line-height:1.7">
+        Suka dengan karya yang aku buat? Dukung aku agar terus semangat membangun website anime berkualitas untuk komunitas! Setiap dukungan sangat berarti 🙏
+      </p>
+      <a href="{{ support_url }}" target="_blank"
+        style="display:inline-flex;align-items:center;gap:.6rem;background:linear-gradient(135deg,#ff6b9d,#a78bfa);color:#fff;font-family:'Orbitron',sans-serif;font-size:.85rem;font-weight:700;letter-spacing:.08em;padding:.9rem 2rem;border-radius:999px;text-decoration:none;transition:transform .2s,box-shadow .2s;box-shadow:0 4px 20px rgba(255,107,157,0.35)"
+        onmouseover="this.style.transform='translateY(-2px)';this.style.boxShadow='0 8px 30px rgba(255,107,157,0.5)'"
+        onmouseout="this.style.transform='';this.style.boxShadow='0 4px 20px rgba(255,107,157,0.35)'">
+        <i class="fas fa-heart"></i> Support di Sociabuzz
+      </a>
+      <p style="margin-top:1rem;font-size:.78rem;color:rgba(255,255,255,0.4)">sociabuzz.com/dayynime/tribe</p>
+    </div>
+  </section>
+
   <!-- Contact -->
   <section class="contact" id="contact">
     <div class="contact-card reveal-up">
@@ -304,6 +324,14 @@
       <a href="https://wa.me/6282320781747" target="_blank" class="btn-wa">
         <i class="fab fa-whatsapp"></i> 082320781747
       </a>
+      <div style="margin-top:1rem">
+        <a href="{{ support_url }}" target="_blank"
+          style="display:inline-flex;align-items:center;gap:.5rem;background:transparent;border:1px solid rgba(244,114,182,0.4);color:var(--pink);font-size:.85rem;padding:.65rem 1.5rem;border-radius:999px;text-decoration:none;transition:background .2s"
+          onmouseover="this.style.background='rgba(244,114,182,0.1)'"
+          onmouseout="this.style.background='transparent'">
+          <i class="fas fa-heart"></i> Support Me di Sociabuzz
+        </a>
+      </div>
       <div class="contact-note"><span class="status-dot"></span> Balas cepat • Open order • Harga nego</div>
     </div>
   </section>
@@ -318,10 +346,19 @@
         <a href="#projects">Projects</a>
         <a href="#app">App</a>
         <a href="https://wa.me/6282320781747" target="_blank">WhatsApp</a>
+        <a href="{{ support_url }}" target="_blank" style="color:var(--pink)"><i class="fas fa-heart"></i> Support</a>
       </div>
       <p class="footer-copy">© 2026 DayyDev. All rights reserved.</p>
     </div>
   </footer>
+
+  <!-- Support Me Floating Button -->
+  <a href="{{ support_url }}" target="_blank"
+    style="position:fixed;bottom:1.5rem;left:1.5rem;z-index:999;display:flex;align-items:center;gap:.5rem;background:linear-gradient(135deg,#ff6b9d,#a78bfa);color:#fff;font-family:'Orbitron',sans-serif;font-size:.72rem;font-weight:700;padding:.65rem 1.2rem;border-radius:999px;text-decoration:none;box-shadow:0 4px 20px rgba(255,107,157,0.4);transition:transform .2s"
+    onmouseover="this.style.transform='scale(1.05)'"
+    onmouseout="this.style.transform=''">
+    <i class="fas fa-heart"></i> Support Me
+  </a>
 
   <script src="{{ url_for('static', filename='js/main.js') }}"></script>
 </body>
