@@ -151,7 +151,7 @@ projects = [
 app_data = {
     "name": "AnimeDayy",
     "desc": "Aplikasi Android all-in-one untuk pecinta anime. Streaming, download, dan track anime favoritmu langsung dari smartphone.",
-    "url": "https://animedayy-download.vercel.app",
+    "url": "/",
     "screenshot": "https://api.microlink.io/?url=https://animedayy-download.vercel.app&screenshot=true&meta=false&embed=screenshot.url",
 }
 
