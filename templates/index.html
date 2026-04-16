@@ -229,7 +229,7 @@
           <img src="{{ p.screenshot }}" alt="{{ p.name }} screenshot" loading="lazy"
             onerror="this.src='https://placehold.co/800x450/0d0d1a/{{ p.color[1:] }}?text={{ p.name }}'">
           <div class="card-overlay">
-            <a href="{{ p.url }}" target="_blank" class="visit-btn" onclick="trackClick('{{ p.key }}')"><i class="fas fa-external-link-alt"></i> Kunjungi</a>
+            <a href="{{ p.url }}" target="_blank" class="visit-btn" onclick="trackAndOpen(event, '{{ p.key }}', '{{ p.url }}')"><i class="fas fa-external-link-alt"></i> Kunjungi</a>
           </div>
           <span class="card-tag">{{ p.tag }}</span>
           <div class="card-num">0{{ loop.index }}</div>
@@ -238,7 +238,7 @@
           <h3>{{ p.name }}</h3>
           <p>{{ p.desc }}</p>
           <div class="card-footer-row">
-            <a href="{{ p.url }}" target="_blank" class="card-link" onclick="trackClick('{{ p.key }}')"><i class="fas fa-link"></i> {{ p.url | replace('https://', '') }}</a>
+            <a href="{{ p.url }}" target="_blank" class="card-link" onclick="trackAndOpen(event, '{{ p.key }}', '{{ p.url }}')"><i class="fas fa-link"></i> {{ p.url | replace('https://', '') }}</a>
             <span class="card-clicks" id="clicks-{{ p.key }}"><i class="fas fa-arrow-up-right-from-square"></i> {{ clicks.get(p.key, 0) }}</span>
           </div>
         </div>
@@ -468,7 +468,8 @@
   <script src="{{ url_for('static', filename='js/main.js') }}"></script>
   <script>
     // ── Click Tracking ──
-    function trackClick(key) {
+    function trackAndOpen(e, key, url) {
+      e.preventDefault();
       fetch('/api/track-click', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
@@ -476,23 +477,27 @@
       })
       .then(r => r.json())
       .then(data => {
-        if (!data.clicks) return;
-        // update per-card counters
-        Object.entries(data.clicks).forEach(([k, v]) => {
-          var el = document.getElementById('clicks-' + k);
-          if (el) el.innerHTML = '<i class="fas fa-arrow-up-right-from-square"></i> ' + v;
-        });
-        // update stats section
-        if (data.totals) {
-          var t = data.totals;
-          var fields = { 'ctr-total': t.total, 'ctr-anime': t.anime, 'ctr-movie': t.movie, 'ctr-tools': t.tools };
-          Object.entries(fields).forEach(([id, val]) => {
-            var el = document.getElementById(id);
-            if (el) el.textContent = val;
+        if (data.clicks) {
+          Object.entries(data.clicks).forEach(([k, v]) => {
+            var el = document.getElementById('clicks-' + k);
+            if (el) el.innerHTML = '<i class="fas fa-arrow-up-right-from-square"></i> ' + v;
           });
         }
+        if (data.totals) {
+          var t = data.totals;
+          ['ctr-total','ctr-anime','ctr-movie','ctr-tools'].forEach(function(id) {
+            var key2 = id.replace('ctr-','');
+            var el = document.getElementById(id);
+            if (el) el.textContent = t[key2] !== undefined ? t[key2] : t.total;
+          });
+          var tot = document.getElementById('ctr-total');
+          if (tot) tot.textContent = t.total;
+        }
       })
-      .catch(function(){});
+      .catch(function(){})
+      .finally(function() {
+        window.open(url, '_blank');
+      });
     }
   </script>
 </body>
