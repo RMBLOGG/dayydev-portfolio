@@ -146,12 +146,22 @@ projects = [
         "color": "#4ade80",
         "category": "tools"
     },
+    {
+        "name": "Dayy's Web",
+        "key": "dayys-web",
+        "desc": "Situs download game PC classic — temukan dan unduh game-game jadul favoritmu dengan mudah dan gratis.",
+        "url": "https://dayy-s-web.vercel.app",
+        "screenshot": "https://api.microlink.io/?url=https://dayy-s-web.vercel.app&screenshot=true&meta=false&embed=screenshot.url",
+        "tag": "Game",
+        "color": "#facc15",
+        "category": "tools"
+    },
 ]
 
 app_data = {
     "name": "AnimeDayy",
     "desc": "Aplikasi Android all-in-one untuk pecinta anime. Streaming, download, dan track anime favoritmu langsung dari smartphone.",
-    "url": "/",
+    "url": "https://animedayy-download.vercel.app",
     "screenshot": "https://api.microlink.io/?url=https://animedayy-download.vercel.app&screenshot=true&meta=false&embed=screenshot.url",
 }
 
